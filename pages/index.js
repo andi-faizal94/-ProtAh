@@ -219,7 +219,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className='flex justify-around px-10 leading-8'>
+          <div className='flex justify-around px-10 leading-8 mb-14'>
             <div>
               <h1 className='font-sans text-bold text-4xl'>
                 We Are Spread All
@@ -273,6 +273,53 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className='flex items-center justify-center mb-10'>
+            <h1 className='font-sans font-bold text-4xl'>
+              Benefit of Choosing Us
+            </h1>
+          </div>
+          <div className='flex items-center justify-evenly space-x-3 px-10'>
+            <div>
+              <h1 className='font-sans font-black text-3xl text-[#0A74A7] mb-3'>
+                01.
+              </h1>
+              <h3 className='font-sans text-3xl font-bold mb-3'>
+                Access to <br /> Exclusive Projects
+              </h3>
+              <p className='font-inter font-normal text-base text-gray-500'>
+                Monitor various exclusive project listings from various leading
+                developers that are sure to be interesting for potential buyers
+              </p>
+            </div>
+            <div>
+              <h1 className='font-sans font-black text-3xl text-[#0A74A7] mb-3'>
+                02.
+              </h1>
+              <h3 className='font-sans text-3xl font-bold mb-3'>
+                Personal Data <br /> Privacy is Safe
+              </h3>
+              <p className='font-inter font-normal text-base text-gray-500'>
+                All transaction data of you and your buyers, both primary and
+                those using joint account services, must be kept safe
+              </p>
+            </div>
+            <div>
+              <h1 className='font-sans font-black text-3xl text-[#0A74A7] mb-3'>
+                03.
+              </h1>
+              <h3 className='font-sans text-3xl font-bold mb-3'>
+                Faster and Easier
+                <br /> Transactions
+              </h3>
+              <p className='font-inter font-normal text-base text-gray-500'>
+                You can search for property types in many locations.
+                Transactions are faster and you can get commissions easily
+              </p>
             </div>
           </div>
         </section>
