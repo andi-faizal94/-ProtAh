@@ -119,7 +119,11 @@ export default function Home() {
                     <div className='flex mx-auto space-x-14 py-7 mb-3'>
                       <div
                         onClick={handleTabHome}
-                        className='relative flex items-center space-x-2'
+                        className={
+                          home
+                            ? 'flex items-center space-x-2 font-bold'
+                            : 'flex items-center space-x-2'
+                        }
                       >
                         <Image
                           layout='intrinsic'
@@ -132,10 +136,16 @@ export default function Home() {
                         />
                         <div className='flex flex-col'>
                           <p className='font-inter'>House</p>
-                          {/* <div className='absolute -left-7 top-8 w-36 bg-black h-0.5'></div> */}
                         </div>
                       </div>
-                      <div onClick={handleTabAppart} className='flex space-x-2'>
+                      <div
+                        onClick={handleTabAppart}
+                        className={
+                          !home
+                            ? 'flex items-center space-x-2 font-bold'
+                            : 'flex items-center space-x-2'
+                        }
+                      >
                         <Image
                           layout='intrinsic'
                           className='items-center'
@@ -149,7 +159,14 @@ export default function Home() {
                           <p className='font-inter'>Apartement</p>
                         </div>
                       </div>
-                      <div onClick={handleTabOffice} className='flex space-x-2'>
+                      <div
+                        onClick={handleTabOffice}
+                        className={
+                          !home
+                            ? 'flex items-center space-x-2 font-bold'
+                            : 'flex items-center space-x-2'
+                        }
+                      >
                         <Image
                           layout='intrinsic'
                           src='/images/building.png'
@@ -165,7 +182,11 @@ export default function Home() {
                       </div>
                       <div
                         onClick={handleTabShopHouse}
-                        className='flex space-x-2'
+                        className={
+                          !home
+                            ? 'flex items-center space-x-2 font-bold'
+                            : 'flex items-center space-x-2'
+                        }
                       >
                         <Image
                           layout='intrinsic'
