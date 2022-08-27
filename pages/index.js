@@ -242,7 +242,7 @@ export default function Home() {
                 Our Project
               </button>
             </div>
-            <div className='bg-gray-200  mx-auto rounded-3xl w-[517px] h-[342px] py-20 px-10'>
+            <div className='bg-gray-200  mx-auto rounded-3xl w-[517px] h-[342px] py-10 px-8'>
               <div className='flex justify-center items-center space-x-6 py-10'>
                 <div className='flex flex-col space-y-10'>
                   <div>
