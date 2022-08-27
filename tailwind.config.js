@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         hero: "url('../public/images/office.png')",
+        appart: "url('../public/images/Appart.png')",
       },
       fontFamily: {
         sans: ['Satoshi', ...defaultTheme.fontFamily.sans],
