@@ -1,10 +1,26 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { FaAngleDown } from 'react-icons/fa';
+import Content from '../components/Content';
 
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
+  const [home, setHome] = useState('home');
+
+  function handleTabHome() {
+    setHome('home');
+  }
+  function handleTabAppart() {
+    setHome('appart');
+  }
+  function handleTabOffice() {
+    setHome('office');
+  }
+  function handleTabShopHouse() {
+    setHome('shophouse');
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -101,7 +117,10 @@ export default function Home() {
                 <div className='bg-white w-[692px] h-[201px] rounded-xl'>
                   <div className='flex flex-col mx-auto'>
                     <div className='flex mx-auto space-x-14 py-7 mb-3'>
-                      <div className='relative flex items-center space-x-2'>
+                      <div
+                        onClick={handleTabHome}
+                        className='relative flex items-center space-x-2'
+                      >
                         <Image
                           layout='intrinsic'
                           className='items-center'
@@ -113,10 +132,10 @@ export default function Home() {
                         />
                         <div className='flex flex-col'>
                           <p className='font-inter'>House</p>
-                          <div className='absolute -left-7 top-8 w-36 bg-black h-0.5'></div>
+                          {/* <div className='absolute -left-7 top-8 w-36 bg-black h-0.5'></div> */}
                         </div>
                       </div>
-                      <div className='flex space-x-2'>
+                      <div onClick={handleTabAppart} className='flex space-x-2'>
                         <Image
                           layout='intrinsic'
                           className='items-center'
@@ -130,7 +149,7 @@ export default function Home() {
                           <p className='font-inter'>Apartement</p>
                         </div>
                       </div>
-                      <div className='flex space-x-2'>
+                      <div onClick={handleTabOffice} className='flex space-x-2'>
                         <Image
                           layout='intrinsic'
                           src='/images/building.png'
@@ -144,7 +163,10 @@ export default function Home() {
                           <p className='font-inter'>Office</p>
                         </div>
                       </div>
-                      <div className='flex space-x-2'>
+                      <div
+                        onClick={handleTabShopHouse}
+                        className='flex space-x-2'
+                      >
                         <Image
                           layout='intrinsic'
                           className='items-center'
@@ -159,24 +181,16 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className='flex justify-between px-10 mb-2'>
-                      <h1 className='font-inter text-gray-400'>City</h1>
-                      <h1 className='font-inter  text-gray-400'>Type</h1>
-                      <h1></h1>
-                    </div>
-                    <div className='flex justify-between px-10'>
-                      <button className='flex items-center bg-gray-200 font-inter px-4 py-2 rounded-full'>
-                        City of Evil State
-                        <FaAngleDown />
-                      </button>
-                      <button className='flex items-center  bg-gray-200 font-inter px-4 py-2 rounded-full'>
-                        Vintage Classic
-                        <FaAngleDown />
-                      </button>
-                      <button className=' bg-green-500 text-white font-inter px-4 py-2 rounded-full'>
-                        Search
-                      </button>
-                    </div>
+                    {home === 'home' && <Content />}
+                    {home === 'appart' && (
+                      <p className='text-center'>Appart On Development</p>
+                    )}
+                    {home === 'office' && (
+                      <p className='text-center'>Office On Development</p>
+                    )}
+                    {home === 'shophouse' && (
+                      <p className='text-center'>ShopHouse On Development</p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -187,7 +201,7 @@ export default function Home() {
           <div className='flex justify-around px-10 leading-8'>
             <div>
               <h1 className='font-sans text-bold text-4xl'>
-                We Are Spread All{' '}
+                We Are Spread All
               </h1>
               <h1 className='font-sans text-bold text-4xl mb-5'>
                 Over the Archipelago.
@@ -195,13 +209,11 @@ export default function Home() {
               <p className='text-base font-inter'>
                 Sit curabitur aliquet morbi venenatis sit in. Ultrices tortor
                 facilisi et sit non enim.
-              </p>{' '}
+              </p>
               <p className='text-base font-inter'>
-                {' '}
                 Vel, a eu nulla egestas nunc, sed morbi facilisis. At
               </p>
               <p className='text-base font-inter mb-5'>
-                {' '}
                 sed auctor aliquam metus. At elit tortor enim sapien
                 pellentesque.
               </p>
