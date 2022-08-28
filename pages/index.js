@@ -3,11 +3,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { FaAngleDown } from 'react-icons/fa';
 import Content from '../components/Content';
+import { useRouter } from 'next/router';
 
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const [home, setHome] = useState('home');
+  const router = useRouter();
 
   function handleTabHome() {
     setHome('home');
@@ -21,6 +23,21 @@ export default function Home() {
   function handleTabShopHouse() {
     setHome('shophouse');
   }
+
+  const navs = [
+    {
+      name: '',
+      href: '#home',
+    },
+    {
+      name: '',
+      href: '#home',
+    },
+    {
+      name: '',
+      href: '#home',
+    },
+  ];
   return (
     <div className={styles.container}>
       <Head>
@@ -32,6 +49,22 @@ export default function Home() {
       <header>
         <nav className='flex items-center justify-evenly p-5'>
           <ul className='flex items-center space-x-6'>
+            {navs.map((nav, index) => {
+              return (
+                <li key={index}>
+                  <a
+                    className={`${
+                      router.asPath === router.href
+                        ? 'active:underline'
+                        : 'text-normal'
+                    }`}
+                    href='#'
+                  >
+                    {nav.name}
+                  </a>
+                </li>
+              );
+            })}
             <li>
               <a className='font-inter' href='#'>
                 Home
@@ -120,8 +153,8 @@ export default function Home() {
                       <div
                         onClick={handleTabHome}
                         className={
-                          home
-                            ? 'flex items-center space-x-2 font-bold'
+                          home === 'home'
+                            ? 'flex items-center space-x-2 border-b-2 w-auto border-black'
                             : 'flex items-center space-x-2'
                         }
                       >
@@ -141,8 +174,8 @@ export default function Home() {
                       <div
                         onClick={handleTabAppart}
                         className={
-                          !home
-                            ? 'flex items-center space-x-2 font-bold'
+                          home === 'appart'
+                            ? 'flex items-center space-x-2 border-b-2 w-auto border-black'
                             : 'flex items-center space-x-2'
                         }
                       >
@@ -162,8 +195,8 @@ export default function Home() {
                       <div
                         onClick={handleTabOffice}
                         className={
-                          !home
-                            ? 'flex items-center space-x-2 font-bold'
+                          home === 'office'
+                            ? 'flex items-center space-x-2 font-bold border-b-2 w-auto border-black'
                             : 'flex items-center space-x-2'
                         }
                       >
@@ -183,8 +216,8 @@ export default function Home() {
                       <div
                         onClick={handleTabShopHouse}
                         className={
-                          !home
-                            ? 'flex items-center space-x-2 font-bold'
+                          home === 'shophouse'
+                            ? 'flex items-center space-x-2 border-b-2 w-auto border-black'
                             : 'flex items-center space-x-2'
                         }
                       >
