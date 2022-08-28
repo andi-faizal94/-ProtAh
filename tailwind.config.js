@@ -11,6 +11,11 @@ module.exports = {
       backgroundImage: {
         hero: "url('../public/images/office.png')",
         appart: "url('../public/images/Appart.png')",
+        employee: "url('../public/images/employee.png')",
+        office1: "url('../public/images/background/Rectangle 5.png')",
+        office2: "url('../public/images/background/Rectangle 6.png')",
+        office3: "url('../public/images/background/Rectangle 7.png')",
+        office4: "url('../public/images/background/Rectangle 5.png')",
       },
       fontFamily: {
         sans: ['Satoshi', ...defaultTheme.fontFamily.sans],
