@@ -166,7 +166,7 @@ export default function Home() {
                           alt='logo'
                         />
                         <div className='flex flex-col'>
-                          <p className='font-inter'>House</p>
+                          <p className='font-inter cursor-pointer'>House</p>
                         </div>
                       </div>
                       <div
@@ -187,7 +187,9 @@ export default function Home() {
                           alt='logo'
                         />
                         <div>
-                          <p className='font-inter'>Apartement</p>
+                          <p className='font-inter cursor-pointer '>
+                            Apartement
+                          </p>
                         </div>
                       </div>
                       <div
@@ -208,7 +210,7 @@ export default function Home() {
                           alt='logo'
                         />
                         <div>
-                          <p className='font-inter'>Office</p>
+                          <p className='font-inter cursor-pointer '>Office</p>
                         </div>
                       </div>
                       <div
@@ -229,7 +231,9 @@ export default function Home() {
                           alt='logo'
                         />
                         <div>
-                          <p className='font-inter'>Shophouse</p>
+                          <p className='font-inter cursor-pointer '>
+                            Shophouse
+                          </p>
                         </div>
                       </div>
                     </div>
