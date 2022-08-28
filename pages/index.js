@@ -254,7 +254,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className='flex justify-around px-10 leading-8 mb-14'>
+          <div className='flex justify-around items-center px-10 leading-8 mb-14'>
             <div>
               <h1 className='font-sans text-bold text-4xl'>
                 We Are Spread All
@@ -461,19 +461,35 @@ export default function Home() {
         <section>
           <div className='flex items-end space-x-6 overflow-x-auto mb-32 px-10'>
             <div className='shrink-0 overflow-hidden rounded-2xl'>
-              <div className='bg-office1 w-[300px] h-[476px]'></div>
+              <div className='bg-office1 w-[300px] h-[476px] flex justify-center items-end'>
+                <p className='text-center text-white mb-5'>
+                  Permata Hijau Suites
+                </p>
+              </div>
             </div>
             <div className='shrink-0 overflow-hidden rounded-2xl'>
-              <div className='bg-office2 w-[300px] h-[335px]'></div>
+              <div className='bg-office2 w-[300px] h-[335px] flex justify-center items-end'>
+                <p className='text-center text-white mb-5'>Cahaya Alam Setu</p>
+              </div>
             </div>
             <div className='shrink-0 overflow-hidden rounded-2xl'>
-              <div className='bg-office3 w-[300px] h-[476px]'></div>
+              <div className='bg-office3 w-[300px] h-[476px] flex justify-center items-end'>
+                <p className='text-center text-white mb-5'>
+                  SouthGate Apartement
+                </p>
+              </div>
             </div>
             <div className='shrink-0 overflow-hidden rounded-2xl'>
-              <div className='bg-office2 w-[300px] h-[242px]'></div>
+              <div className='bg-office2 w-[300px] h-[242px] flex justify-center items-end'>
+                <p className='text-center text-white mb-5'>Sharia Residence</p>
+              </div>
             </div>
             <div className='shrink-0 overflow-hidden rounded-2xl'>
-              <div className='bg-office4 w-[300px] h-[335px]'></div>
+              <div className='bg-office4 w-[300px] h-[335px] flex justify-center items-end'>
+                <p className='text-center text-white mb-5'>
+                  SouthGate Apartement
+                </p>
+              </div>
             </div>
           </div>
         </section>
