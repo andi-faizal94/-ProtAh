@@ -4,6 +4,19 @@ import Image from 'next/image';
 
 const Hero = () => {
   const [home, setHome] = useState('home');
+
+  function handleTabHome() {
+    setHome('home');
+  }
+  function handleTabAppart() {
+    setHome('appart');
+  }
+  function handleTabOffice() {
+    setHome('office');
+  }
+  function handleTabShopHouse() {
+    setHome('shophouse');
+  }
   return (
     <div>
       <div className='bg-blue-200 rounded-xl overflow-hidden mx-10 h-screen mb-14'>
