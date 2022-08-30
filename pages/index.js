@@ -24,16 +24,24 @@ export default function Home() {
 
   const navs = [
     {
-      name: '',
+      name: 'Home',
       href: '#home',
+      icon: null,
     },
     {
-      name: '',
+      name: 'Buy',
       href: '#home',
+      icon: null,
     },
     {
-      name: '',
+      name: 'Sell and Rent',
       href: '#home',
+      icon: null,
+    },
+    {
+      name: 'Our Project',
+      href: '#home',
+      icon: <FaAngleDown />,
     },
   ];
   return (
@@ -46,10 +54,10 @@ export default function Home() {
 
       <header>
         <nav className='flex items-center justify-evenly p-5'>
-          <ul className='flex items-center space-x-6'>
+          <ul className='hidden md:flex items-center space-x-6'>
             {navs.map((nav, index) => {
               return (
-                <li key={index}>
+                <li className='flex items-center' key={index}>
                   <a
                     className={`${
                       router.asPath === router.href
@@ -60,32 +68,12 @@ export default function Home() {
                   >
                     {nav.name}
                   </a>
+                  {nav.icon}
                 </li>
               );
             })}
-            <li>
-              <a className='font-inter' href='#'>
-                Home
-              </a>
-            </li>
-            <li>
-              <a className='font-inter' href='#'>
-                Buy
-              </a>
-            </li>
-            <li>
-              <a className='font-inter' href='#'>
-                Sell and Rent
-              </a>
-            </li>
-            <li className='flex items-center'>
-              <a className='font-inter' href='#'>
-                Our Project
-              </a>
-              <FaAngleDown />
-            </li>
           </ul>
-          <ul className='flex items-center space-x-8'>
+          <ul className='hidden md:flex items-center space-x-8'>
             <li className='flex items-center'>
               <div className='w-14 h-14 py-4 overflow-hidden'>
                 <Image
@@ -102,7 +90,7 @@ export default function Home() {
               </a>
             </li>
           </ul>
-          <ul className='flex items-center space-x-6'>
+          <ul className='hidden md:flex items-center space-x-6'>
             <li>
               <a className='font-inter' href='#'>
                 Join with Us
@@ -124,19 +112,82 @@ export default function Home() {
               </button>
             </li>
           </ul>
+
+          {/* hp */}
+          <div className='flex flex-col md:hidden item-center'>
+            <ul className='flex flex-col md:hidden items-center space-y-8'>
+              {navs.map((nav, index) => {
+                return (
+                  <li className='flex items-center' key={index}>
+                    <a
+                      className={`${
+                        router.asPath === router.href
+                          ? 'active:underline'
+                          : 'text-normal'
+                      }`}
+                      href='#'
+                    >
+                      {nav.name}
+                    </a>
+                    {nav.icon}
+                  </li>
+                );
+              })}
+            </ul>
+
+            <ul className='flex flex-col md:hidden items-center space-y-8'>
+              <li className='flex items-center'>
+                <div className='w-14 h-14 py-4 overflow-hidden'>
+                  <Image
+                    layout='intrinsic'
+                    className='items-center'
+                    src='/images/protah.png'
+                    width='20%'
+                    height='20%'
+                    alt='logo'
+                  />
+                </div>
+                <a className='-ml-8 font-inter' href='#'>
+                  ProtAh.
+                </a>
+              </li>
+            </ul>
+            <ul className='flex flex-col md:hidden items-center space-y-8'>
+              <li>
+                <a className='font-inter' href='#'>
+                  Join with Us
+                </a>
+              </li>
+              <li>
+                <a className='font-inter' href='#'>
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a className='font-inter' href='#'>
+                  About Us
+                </a>
+              </li>
+              <li>
+                <button className='font-inter text-green-400 outline outline-green-300 rounded-full px-6 py-2 '>
+                  Login
+                </button>
+              </li>
+            </ul>
+          </div>
         </nav>
       </header>
 
       <main className=''>
         <section>
           <div className='bg-blue-200 rounded-xl overflow-hidden mx-10 h-screen mb-14'>
-            <div className='bg-hero h-screen max-w-full'>
+            <div className='bg-hero h-screen w-full md:max-w-full'>
               <div className='flex flex-col justify-center items-center h-screen'>
                 <div className='flex flex-col  items-center mb-5'>
-                  <h1 className='font-sans font-bold text-7xl text-white'>
+                  <h1 className='font-sans font-bold md:text-7xl text-white'>
                     Buy and Sell, Rent,
                   </h1>
-                  <h1 className='font-sans font-bold text-7xl text-white'>
+                  <h1 className='font-sans font-bold md:text-7xl text-white'>
                     Cooperate, Property
                   </h1>
                 </div>
@@ -145,15 +196,15 @@ export default function Home() {
                     Choice of property options are all here
                   </p>
                 </div>
-                <div className='bg-white w-[692px] h-[201px] rounded-xl'>
+                <div className='bg-white w-3/4 md:w-[692px] h-auto md:h-[201px] rounded-xl  md:px-0'>
                   <div className='flex flex-col mx-auto'>
-                    <div className='flex mx-auto space-x-14 py-7 mb-3'>
+                    <div className='flex flex-col md:flex-row mx-auto md:space-x-14 py-7 mb-3'>
                       <div
                         onClick={handleTabHome}
                         className={
                           home === 'home'
-                            ? 'flex items-center space-x-2 border-b-2 w-auto border-black'
-                            : 'flex items-center space-x-2'
+                            ? 'flex items-center md:space-x-2 font-bold md:border-b-2 border-black'
+                            : 'flex items-center md:space-x-2'
                         }
                       >
                         <Image
@@ -173,8 +224,8 @@ export default function Home() {
                         onClick={handleTabAppart}
                         className={
                           home === 'appart'
-                            ? 'flex items-center space-x-2 border-b-2 w-auto border-black'
-                            : 'flex items-center space-x-2'
+                            ? 'flex items-center md:space-x-2 font-bold md:border-b-2  border-black'
+                            : 'flex items-center md:space-x-2'
                         }
                       >
                         <Image
@@ -196,8 +247,8 @@ export default function Home() {
                         onClick={handleTabOffice}
                         className={
                           home === 'office'
-                            ? 'flex items-center space-x-2 font-bold border-b-2 w-auto border-black'
-                            : 'flex items-center space-x-2'
+                            ? 'flex items-center md:space-x-2 font-bold md:border-b-2 border-black'
+                            : 'flex items-center md:space-x-2'
                         }
                       >
                         <Image
@@ -217,8 +268,8 @@ export default function Home() {
                         onClick={handleTabShopHouse}
                         className={
                           home === 'shophouse'
-                            ? 'flex items-center space-x-2 border-b-2 w-auto border-black'
-                            : 'flex items-center space-x-2'
+                            ? 'flex items-center md:space-x-2 md:border-b-2  border-black'
+                            : 'flex items-center md:space-x-2'
                         }
                       >
                         <Image
@@ -254,7 +305,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className='flex justify-around items-center px-10 leading-8 mb-14'>
+          <div className='flex flex-col justify-between md:flex-row md:justify-around items-center px-10 leading-8 space-y-10 md:space-y-0 mb-14'>
             <div>
               <h1 className='font-sans text-bold text-4xl'>
                 We Are Spread All
@@ -277,7 +328,7 @@ export default function Home() {
                 Our Project
               </button>
             </div>
-            <div className='bg-gray-200  mx-auto rounded-3xl w-[517px] h-[342px] py-10 px-8'>
+            <div className='bg-gray-200  mx-auto rounded-3xl md:w-[517px] md:h-[342px] py-10 px-8'>
               <div className='flex justify-center items-center space-x-6 py-10'>
                 <div className='flex flex-col space-y-10'>
                   <div>
@@ -315,11 +366,11 @@ export default function Home() {
         <section>
           <div className='mb-14'>
             <div className='flex items-center justify-center mb-10'>
-              <h1 className='font-sans font-bold text-4xl'>
+              <h1 className='font-sans font-bold md:text-4xl'>
                 Benefit of Choosing Us
               </h1>
             </div>
-            <div className='flex items-center justify-evenly space-x-3 px-10'>
+            <div className='flex flex-col md:flex-row items-center md:justify-evenly md:space-x-3 px-10'>
               <div>
                 <h1 className='font-sans font-black text-3xl text-[#0A74A7] mb-3'>
                   01.
@@ -368,7 +419,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className='flex justify-evenly items-center object-cover mb-24'>
+          <div className='flex flex-col md:flex-row md:justify-evenly items-center object-cover mb-24'>
             <div className='h-32 w-32'>
               <Image
                 layout='intrinsic'
@@ -438,9 +489,9 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className='flex items-stretch mb-32 px-10'>
+          <div className='flex flex-col  items-center md:flex-row md:items-stretch mb-32 md:px-10'>
             <div className='w-6/12'>
-              <h1 className='fon-sants font-bold text-5xl leading-normal'>
+              <h1 className='fon-sants font-bold md:text-5xl leading-normal'>
                 Our Recommended <br /> Comfortable Residence
               </h1>
             </div>
@@ -496,7 +547,7 @@ export default function Home() {
 
         <section>
           <div className='flex flex-col items-center justify-center mb-14'>
-            <h1 className='font-sans text-4xl font-bold mb-10'>
+            <h1 className='font-sans md:text-4xl font-bold mb-10'>
               Testimonials Our Clients
             </h1>
             <p className='font-sans text-gray-600 text-center mb-5 leading-8'>
