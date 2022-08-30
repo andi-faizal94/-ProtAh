@@ -183,7 +183,7 @@ export default function Home() {
           <div className='bg-blue-200 rounded-xl overflow-hidden mx-10 h-screen mb-14'>
             <div className='bg-hero h-screen w-full md:max-w-full'>
               <div className='flex flex-col justify-center items-center h-screen'>
-                <div className='flex flex-col  items-center mb-5'>
+                <div className='flex flex-col items-center mb-5'>
                   <h1 className='font-sans font-bold md:text-7xl text-white'>
                     Buy and Sell, Rent,
                   </h1>
@@ -196,7 +196,7 @@ export default function Home() {
                     Choice of property options are all here
                   </p>
                 </div>
-                <div className='bg-white w-3/4 md:w-[692px] h-auto md:h-[201px] rounded-xl  md:px-0'>
+                <div className='bg-white w-3/4 md:w-[692px] h-auto md:h-[201px] rounded-xl md:px-0'>
                   <div className='flex flex-col mx-auto'>
                     <div className='flex flex-col md:flex-row mx-auto md:space-x-14 py-7 mb-3'>
                       <div
