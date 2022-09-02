@@ -9,17 +9,8 @@ export default function Home() {
   const [home, setHome] = useState('home');
   const router = useRouter();
 
-  function handleTabHome() {
-    setHome('home');
-  }
-  function handleTabAppart() {
-    setHome('appart');
-  }
-  function handleTabOffice() {
-    setHome('office');
-  }
-  function handleTabShopHouse() {
-    setHome('shophouse');
+  function handleTab(arg) {
+    setHome(arg);
   }
 
   const navs = [
@@ -54,7 +45,7 @@ export default function Home() {
 
       <header>
         <nav className='flex items-center justify-evenly p-5'>
-          <ul className='hidden md:flex items-center space-x-6'>
+          <ul className='hidden md:flex items-center md:space-x-6'>
             {navs.map((nav, index) => {
               return (
                 <li className='flex items-center' key={index}>
@@ -73,7 +64,7 @@ export default function Home() {
               );
             })}
           </ul>
-          <ul className='hidden md:flex items-center space-x-8'>
+          <ul className='hidden md:flex items-center md:space-x-8'>
             <li className='flex items-center'>
               <div className='w-14 h-14 py-4 overflow-hidden'>
                 <Image
@@ -90,7 +81,7 @@ export default function Home() {
               </a>
             </li>
           </ul>
-          <ul className='hidden md:flex items-center space-x-6'>
+          <ul className='hidden md:flex items-center md:space-x-6'>
             <li>
               <a className='font-inter' href='#'>
                 Join with Us
@@ -179,9 +170,9 @@ export default function Home() {
       </header>
 
       <main className=''>
-        <section>
-          <div className='bg-blue-200 rounded-xl overflow-hidden mx-10 h-screen mb-14'>
-            <div className='bg-hero h-screen w-full md:max-w-full'>
+        <section className='md:px-10 m-2'>
+          <div className='bg-blue-200 rounded-xl overflow-hidden h-screen w-full mb-14'>
+            <div className='bg-hero mx-auto h-screen'>
               <div className='flex flex-col justify-center items-center h-screen'>
                 <div className='flex flex-col items-center mb-5'>
                   <h1 className='font-sans font-bold md:text-7xl text-white'>
@@ -196,11 +187,11 @@ export default function Home() {
                     Choice of property options are all here
                   </p>
                 </div>
-                <div className='bg-white w-3/4 md:w-[692px] h-auto md:h-[201px] rounded-xl md:px-0'>
+                <div className='bg-white w-1/2 md:w-[692px] h-auto md:h-[201px] rounded-xl md:px-0'>
                   <div className='flex flex-col mx-auto'>
                     <div className='flex flex-col md:flex-row mx-auto md:space-x-14 py-7 mb-3'>
                       <div
-                        onClick={handleTabHome}
+                        onClick={() => handleTab('home')}
                         className={
                           home === 'home'
                             ? 'flex items-center md:space-x-2 font-bold md:border-b-2 border-black'
@@ -221,7 +212,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div
-                        onClick={handleTabAppart}
+                        onClick={() => handleTab('appart')}
                         className={
                           home === 'appart'
                             ? 'flex items-center md:space-x-2 font-bold md:border-b-2  border-black'
@@ -244,7 +235,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div
-                        onClick={handleTabOffice}
+                        onClick={() => handleTab('office')}
                         className={
                           home === 'office'
                             ? 'flex items-center md:space-x-2 font-bold md:border-b-2 border-black'
@@ -265,7 +256,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div
-                        onClick={handleTabShopHouse}
+                        onClick={() => handleTab('shophouse')}
                         className={
                           home === 'shophouse'
                             ? 'flex items-center md:space-x-2 md:border-b-2  border-black'
