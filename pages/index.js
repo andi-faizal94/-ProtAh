@@ -295,6 +295,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <section>
           <div className='flex flex-col justify-between md:flex-row md:justify-around items-center px-10 leading-8 space-y-10 md:space-y-0 mb-14'>
             <div>
@@ -409,6 +410,7 @@ export default function Home() {
             <div className='bg-appart w-full h-[500px]'></div>
           </div>
         </section>
+
         <section>
           <div className='flex flex-col md:flex-row md:justify-evenly items-center object-cover mb-24'>
             <div className='h-32 w-32'>
@@ -479,6 +481,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <section>
           <div className='flex flex-col  items-center md:flex-row md:items-stretch mb-32 md:px-10'>
             <div className='w-6/12'>
@@ -552,6 +555,36 @@ export default function Home() {
             <div>
               <p className='text-center'>Endang Susanti</p>
               <p className='text-center'>Private Employees</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className='grid grid-cols-2 items-center bg-[#0A74A7] h-40 px-10'>
+            <div className='px-10'>
+              <div className='flex items-center'>
+                <Image
+                  layout='intrinsic'
+                  className='items-center'
+                  src='/images/protah.png'
+                  width='20%'
+                  height='20%'
+                  alt='logo'
+                />
+                <h1 className='text-white'>ProtAh.</h1>
+              </div>
+              <p className='text-white'>
+                We ara a lorem ipsum dolor sit amet, consectetur adipiscing
+                elit, sed do eiusmod tempor incididun.
+              </p>
+            </div>
+            <div className='px-10'>
+              <h1 className='text-white'>Newsletter</h1>
+              <p className='text-white'>
+                Be the first one to know about discounts, offers and events
+                weekly in your mailbox. Unsubscribe whenever you like with one
+                click.
+              </p>
             </div>
           </div>
         </section>
