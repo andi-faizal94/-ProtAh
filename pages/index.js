@@ -4,8 +4,10 @@ import Image from 'next/image';
 import { FaAngleDown } from 'react-icons/fa';
 import Content from '../components/Content';
 import { useRouter } from 'next/router';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Home() {
+  const [nav, setNav] = useState(false);
   const [home, setHome] = useState('home');
   const router = useRouter();
 
@@ -21,17 +23,17 @@ export default function Home() {
     },
     {
       name: 'Buy',
-      href: '#home',
+      href: '#buy',
       icon: null,
     },
     {
       name: 'Sell and Rent',
-      href: '#home',
+      href: '#sell',
       icon: null,
     },
     {
       name: 'Our Project',
-      href: '#home',
+      href: '#our',
       icon: <FaAngleDown />,
     },
   ];
@@ -103,69 +105,81 @@ export default function Home() {
               </button>
             </li>
           </ul>
+          <div
+            onClick={() => setNav(!nav)}
+            className='md:hidden absolute right-2 top-2 z-30'
+          >
+            {!nav ? (
+              <FaBars className='transition duration-500 ease-out' />
+            ) : (
+              <FaTimes className='transition duration-500 ease-out' />
+            )}
+          </div>
 
           {/* hp */}
-          <div className='flex flex-col md:hidden item-center'>
-            <ul className='flex flex-col md:hidden items-center space-y-8'>
-              {navs.map((nav, index) => {
-                return (
-                  <li className='flex items-center' key={index}>
-                    <a
-                      className={`${
-                        router.asPath === router.href
-                          ? 'active:underline'
-                          : 'text-normal'
-                      }`}
-                      href='#'
-                    >
-                      {nav.name}
-                    </a>
-                    {nav.icon}
-                  </li>
-                );
-              })}
-            </ul>
+          {nav && (
+            <div className='flex flex-col md:hidden item-center justify-center bg-black w-screen h-screen   text-white'>
+              <ul className='flex flex-col md:hidden items-center space-y-8'>
+                {navs.map((nav, index) => {
+                  return (
+                    <li className='flex items-center' key={index}>
+                      <a
+                        className={`${
+                          router.asPath === router.href
+                            ? 'active:underline'
+                            : 'text-normal'
+                        }`}
+                        href='#'
+                      >
+                        {nav.name}
+                      </a>
+                      {nav.icon}
+                    </li>
+                  );
+                })}
+              </ul>
 
-            <ul className='flex flex-col md:hidden items-center space-y-8'>
-              <li className='flex items-center'>
-                <div className='w-14 h-14 py-4 overflow-hidden'>
-                  <Image
-                    layout='intrinsic'
-                    className='items-center'
-                    src='/images/protah.png'
-                    width='20%'
-                    height='20%'
-                    alt='logo'
-                  />
-                </div>
-                <a className='-ml-8 font-inter' href='#'>
-                  ProtAh.
-                </a>
-              </li>
-            </ul>
-            <ul className='flex flex-col md:hidden items-center space-y-8'>
-              <li>
-                <a className='font-inter' href='#'>
-                  Join with Us
-                </a>
-              </li>
-              <li>
-                <a className='font-inter' href='#'>
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a className='font-inter' href='#'>
-                  About Us
-                </a>
-              </li>
-              <li>
-                <button className='font-inter text-green-400 outline outline-green-300 rounded-full px-6 py-2 '>
-                  Login
-                </button>
-              </li>
-            </ul>
-          </div>
+              <ul className='flex flex-col md:hidden items-center space-y-8'>
+                <li className='flex items-center'>
+                  <div className='w-14 h-14 py-4 overflow-hidden'>
+                    <Image
+                      layout='intrinsic'
+                      className='items-center'
+                      src='/images/protah.png'
+                      width='20%'
+                      height='20%'
+                      alt='logo'
+                    />
+                  </div>
+                  <a className='-ml-8 font-inter' href='#'>
+                    ProtAh.
+                  </a>
+                </li>
+              </ul>
+              <ul className='flex flex-col md:hidden items-center space-y-8'>
+                <li>
+                  <a className='font-inter' href='#'>
+                    Join with Us
+                  </a>
+                </li>
+                <li>
+                  <a className='font-inter' href='#'>
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <a className='font-inter' href='#'>
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <button className='font-inter text-green-400 outline outline-green-300 rounded-full px-6 py-2 '>
+                    Login
+                  </button>
+                </li>
+              </ul>
+            </div>
+          )}
         </nav>
       </header>
 
@@ -560,7 +574,7 @@ export default function Home() {
         </section>
 
         <section>
-          <div className='grid grid-cols-2 items-center bg-[#0A74A7] h-40 px-10'>
+          <div className='flex flex-col md:grid md:grid-cols-2 items-center justify-between space-y-4 bg-[#0A74A7] h-full md:h-40 px-10'>
             <div className='px-10'>
               <div className='flex items-center'>
                 <Image
